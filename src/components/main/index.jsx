@@ -1,14 +1,26 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-import { getDatos } from "../../service"
+import { getDatos } from "../../service";
 
 getDatos()
 
 export const Main = () => {
 
     const [ characters, setCharacters ] = useState({
-        ListCharacters : []
-    })
+        listCharacters : []
+    });
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await getDatos();
+
+            setCharacters({
+                listCharacters: data.results
+            });
+        };
+
+        fetchData();
+    },[]);
 
     return(
         <section>

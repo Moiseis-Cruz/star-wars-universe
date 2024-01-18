@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 
 import { getDatos } from "../../service";
 
-getDatos()
-
 export const Main = () => {
 
     const [ characters, setCharacters ] = useState({
@@ -13,6 +11,8 @@ export const Main = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getDatos();
+
+            console.log(data.results);
 
             setCharacters({
                 listCharacters: data.results

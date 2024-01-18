@@ -24,7 +24,20 @@ export const Main = () => {
 
     return(
         <section>
-            <h1>Teste</h1>
+            <ul>
+                {
+                    characters.listCharacters.map((item, index) => {
+                        return(
+                            <li key={index}>
+                                <div>
+                                    <h2>{item.name}</h2>
+                                    <p>{item.url}</p>
+                                </div>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
         </section>
     )
 }

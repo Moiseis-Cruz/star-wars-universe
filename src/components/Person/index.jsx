@@ -5,9 +5,8 @@ export const Person = (props) => {
                 props.people.map((item, index) => {
                     return(
                         <li key={index}>
-                            <div>
+                            <div style={{border: '2px solid red'}}>
                                 <h2>{item.name}</h2>
-                                <p>{item.url}</p>
                             </div>
                         </li>
                     )

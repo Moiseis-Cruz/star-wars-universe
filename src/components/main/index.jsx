@@ -24,7 +24,7 @@ export const Main = () => {
 
     return(
         <section>
-            <Person people={characters.listCharacters} />
+            {characters.listCharacters.length > 0 ? <Person people={characters.listCharacters} /> : <h2>❗❗Nenhum personagem encontrado❗❗</h2>}
         </section>
     )
 }

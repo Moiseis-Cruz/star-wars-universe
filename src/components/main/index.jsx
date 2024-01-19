@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { Person } from "../Person";
+
 import { getDatos } from "../../service";
 
 export const Main = () => {
@@ -11,8 +13,6 @@ export const Main = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getDatos();
-
-            console.log(data.results);
 
             setCharacters({
                 listCharacters: data.results
@@ -26,24 +26,5 @@ export const Main = () => {
         <section>
             <Person people={characters.listCharacters} />
         </section>
-    )
-}
-
-const Person = (props) => {
-    return(
-        <ul>
-            {
-                props.people.map((item, index) => {
-                    return(
-                        <li key={index}>
-                            <div>
-                                <h2>{item.name}</h2>
-                                <p>{item.url}</p>
-                            </div>
-                        </li>
-                    )
-                })
-            }
-        </ul>
     )
 }

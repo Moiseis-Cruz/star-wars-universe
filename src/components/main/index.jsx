@@ -14,6 +14,8 @@ export const Main = () => {
         const fetchData = async () => {
             const data = await getDatos();
 
+            console.log(data.results);
+
             setCharacters({
                 listCharacters: data.results
             });
